@@ -16,7 +16,7 @@ pip install git+https://github.com/xiaoyu19960507/milkypy.git
 
 ```python
 import asyncio
-from milkypy import MilkyClient, Message, Text, Reply
+from milkypy import MilkyClient, Text, Reply
 
 # 1. 初始化客户端
 # host: Milky 协议端运行的 IP
@@ -27,7 +27,7 @@ bot = MilkyClient(host="127.0.0.1", port=3010)
 @bot.on("message_receive")
 async def handle_message(self, event: dict, self_id: int, time: int):
     # 提取纯文本内容
-    content = Message.extract_text(event["segments"])
+    content = "".join([s["data"]["text"] for s in event["segments"] if s["type"] == "text"])
     
     peer_id = event["peer_id"]
     message_scene = event["message_scene"]

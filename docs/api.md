@@ -528,6 +528,3 @@ MilkyPy 提供了一系列辅助函数来帮助你构造消息段。你可以将
 - `Record(uri: str)`: 构造语音消息段。
 - `Video(uri: str, thumb_uri: str = None)`: 构造视频消息段。
 - `Forward(messages: List[dict])`: 构造合并转发消息段。
-
-### 静态辅助工具 (`Message`)
-- `Message.extract_text(segments: list)`: 从接收到的消息段列表中提取出所有的纯文本内容。
