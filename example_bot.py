@@ -57,7 +57,6 @@ async def handle_nudge(self: MilkyClient, event: dict, self_id: int, time: int):
     """
     time_str = datetime.fromtimestamp(time).strftime('%Y-%m-%d %H:%M:%S')
     logger.info(f"机器人 {self_id} 在 {time_str} 收到事件: 群 {event['group_id']} 中 {event['sender_id']} 戳了 {event['receiver_id']}")
-    raise Exception("测试异常")
 
 
 # 启动机器人
